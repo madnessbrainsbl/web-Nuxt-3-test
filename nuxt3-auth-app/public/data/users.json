@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "Admin",
+    "surname": "User",
+    "credentials": {
+      "username": "admin@example.com",
+      "passphrase": "admin123"
+    },
+    "email": "admin@example.com",
+    "active": true,
+    "created": "03.03.2025 10:00:21",
+    "role": {
+      "id": 1,
+      "name": "admin",
+      "permissions": ["read", "write", "delete"]
+    },
+    "_comment": "Пользователь Admin User с логином admin@example.com и паролем 'admin123'"
+  },
+  {
+    "id": 2,
+    "name": "David",
+    "surname": "Jones",
+    "credentials": {
+      "username": "david.jones@creds.com",
+      "passphrase": "user123"
+    },
+    "email": "david.jones@creds.com",
+    "active": true,
+    "created": "03.03.2025 10:00:21",
+    "role": {
+      "id": 2,
+      "name": "user",
+      "permissions": ["read"]
+    },
+    "_comment": "Пользователь David Jones с логином david.jones@creds.com и паролем 'user123'"
+  },
+  {
+    "id": 3,
+    "name": "Samantha",
+    "surname": "Robertson",
+    "credentials": {
+      "username": "sam.robertson@creds.com",
+      "passphrase": "manager123"
+    },
+    "email": "sam.robertson@creds.com",
+    "active": true,
+    "created": "03.03.2025 10:28:13",
+    "role": {
+      "id": 3,
+      "name": "manager",
+      "permissions": ["read", "write"]
+    },
+    "_comment": "Пользователь Samantha Robertson с логином sam.robertson@creds.com и паролем 'manager123'"
+  },
+  {
+    "id": 4,
+    "name": "Nicholas",
+    "surname": "Crew",
+    "credentials": {
+      "username": "nic.crew@creds.com",
+      "passphrase": "password123"
+    },
+    "email": "nic.crew@creds.com",
+    "active": false,
+    "created": "01.03.2025 12:56:28",
+    "role": {
+      "id": 2,
+      "name": "user",
+      "permissions": ["read"]
+    },
+    "_comment": "Пользователь Nicholas Crew с логином nic.crew@creds.com и паролем 'password123'"
+  }
+] 

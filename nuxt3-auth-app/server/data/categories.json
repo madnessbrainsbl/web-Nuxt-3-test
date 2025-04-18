@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Electronics",
+    "description": "Electronic devices and accessories",
+    "slug": "electronics",
+    "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e",
+    "active": true
+  },
+  {
+    "id": 2,
+    "name": "Furniture",
+    "description": "Home and office furniture",
+    "slug": "furniture",
+    "image": "https://images.unsplash.com/photo-1538688423619-a81d3f23454b",
+    "active": true
+  },
+  {
+    "id": 3,
+    "name": "Appliances",
+    "description": "Home and kitchen appliances",
+    "slug": "appliances",
+    "image": "https://images.unsplash.com/photo-1557985594-28b4edb4c9bf",
+    "active": true
+  },
+  {
+    "id": 4,
+    "name": "Wearables",
+    "description": "Wearable technology and accessories",
+    "slug": "wearables",
+    "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30",
+    "active": true
+  },
+  {
+    "id": 5,
+    "name": "Audio",
+    "description": "Audio equipment and accessories",
+    "slug": "audio",
+    "image": "https://images.unsplash.com/photo-1545454675-3531b543be5d",
+    "active": true
+  },
+  {
+    "id": 6,
+    "name": "Gaming",
+    "description": "Video games and gaming equipment",
+    "slug": "gaming",
+    "image": "https://images.unsplash.com/photo-1605901309584-818e25960a8f",
+    "active": true
+  }
+] 
