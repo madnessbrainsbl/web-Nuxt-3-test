@@ -1,74 +1,150 @@
-# Nuxt 3 Authentication App
+# Nuxt 3 Authentication - Personal Account
 
-A web application built with Nuxt 3 featuring user authentication and product/order data management.
+This is a web application developed using Nuxt 3, TypeScript, and SCSS. It demonstrates user authentication functionality and a personal account dashboard with order display and filtering capabilities.
 
-## Features
+## Functionality
 
-- User authentication with session persistence
-- Account dashboard with user data display
-- Data filtering by creation date and product name
-- Responsive design using SCSS
-- TypeScript for enhanced development
-- Pinia for state management
+### Login Page
+- Authentication form with field validation
+- Authentication error handling
+- Protection against multiple login attempts
 
-## Demo
+### User Dashboard
+- Display of user information
+- Order history view
+- Order filtering by status and date
+- Statistics display (total number of orders, total amount)
+- Logout functionality
+- Route protection for unauthorized users
 
-- Login page: User enters credentials, system validates data
-- Account dashboard: Displays list of orders/products with filtering capabilities
-- Session persists after page refresh
-- Logout functionality removes user session
+### Sessions and Authorization
+- Session state persistence between page reloads
+- User data management through Pinia store
+- API for credential authentication
 
-## Installation
+## Technologies
+- **Nuxt 3**: Full-featured framework for Vue.js
+- **TypeScript**: Static typing for improved code quality
+- **SCSS**: Advanced component styling capabilities
+- **Pinia**: Application state management
+- **JSON**: Using static JSON files as data storage
 
+## Installation and Launch
+
+### Prerequisites
+- Node.js (version 16 or higher recommended)
+- npm or yarn
+
+### Installation Steps
+
+1. Clone the repository
 ```bash
-# Clone the repository
 git clone https://github.com/madnessbrainsbl/web-Nuxt-3-test.git
-
-# Navigate to project directory
-cd web-Nuxt-3-test
-
-# Install dependencies
-npm install
-
-# Launch development server
-npm run dev
+cd nuxt3-auth-app
 ```
 
-## Production Setup
-
+2. Install dependencies
 ```bash
-# Build for production
-npm run build
-
-# Launch production server
-npm run start
+npm install
+# or
+yarn install
 ```
 
-## Tech Stack
+3. Run the application in development mode
+```bash
+npm run dev
+# or
+yarn dev
+```
 
-- [Nuxt 3](https://nuxt.com/) - Vue.js framework
-- [TypeScript](https://www.typescriptlang.org/) - Typed JavaScript
-- [Pinia](https://pinia.vuejs.org/) - State management
-- [SCSS](https://sass-lang.com/) - CSS preprocessor
-- [Nuxt UI](https://ui.nuxt.com/) - UI components for Nuxt
+4. Open http://localhost:3000 in your browser
 
-## Deployment Process
+### Production Build
+```bash
+npm run build
+# or
+yarn build
+```
 
-To deploy the application on a production server:
+## Test Credentials
 
-1. Configure environment variables (.env)
-2. Build the project (`npm run build`)
-3. Use PM2 or another process manager to manage the application
-4. Configure Nginx as a reverse proxy
+The following test accounts are configured in the application:
 
-## Implemented Functions
+| Login                 | Password     | Role      |
+|-----------------------|--------------|-----------|
+| david.jones@creds.com | 8u3&s-1uda   | User      |
+| sam.robertson@creds.com | 0k91sa639  | Manager   |
+| nic.crew@creds.com    | 1atr48asf03  | User (inactive) |
 
-- User authentication with session storage in cookies
-- Protected routes using middleware
-- Client-side data filtering
-- Record sorting by various fields
-- Responsive design for mobile devices
+## Project Structure
 
-## License
+```
+nuxt3-auth-app/
+├── components/       # Vue components
+├── pages/            # Application pages
+│   ├── index.vue     # Home page
+│   ├── login.vue     # Login page
+│   └── account.vue   # Personal account
+├── public/           # Static resources
+│   └── data/         # Public JSON data
+├── server/           # Server functions
+│   ├── api/          # API endpoints
+│   └── data/         # Server-accessible data
+├── stores/           # Pinia stores
+│   ├── auth.ts       # Authentication store
+│   ├── products.ts   # Products store
+│   └── orders.ts     # Orders store
+├── middleware/       # Nuxt middleware
+└── nuxt.config.ts    # Nuxt configuration
+```
 
-[MIT](https://opensource.org/licenses/MIT)
+## API Endpoints
+
+- **POST /api/auth/login** - Authenticates a user and returns session info
+- **GET /api/products** - Returns a list of products with filtering capabilities
+- **GET /api/orders/[userId]** - Returns orders for a specific user
+
+## Deployment to Production
+
+To deploy this application to a production server, follow these steps:
+
+1. **Build the application**:
+   ```bash
+   npm run build
+   ```
+
+2. **Set up server environment**:
+   - Ensure Node.js (v16+) is installed on your server
+   - Configure a reverse proxy (Nginx or Apache) to direct traffic to your application
+   - Set up SSL certificates for HTTPS
+
+3. **Deploy the built files**:
+   - Upload the `.output` directory to your server
+   - Install production dependencies: `npm install --production`
+
+4. **Start the application**:
+   ```bash
+   node .output/server/index.mjs
+   ```
+
+5. **Configure process management**:
+   - Use PM2 or similar tools to keep the application running
+   - Set up auto-restart in case of crashes
+   - Configure log rotation
+
+## Implemented Features
+
+- **Authentication System**: 
+  Implemented a secure login system using cookies for session persistence, with password extraction from comments for demonstration purposes.
+
+- **Data Filtering**: 
+  Created a robust filtering system for orders that allows filtering by status and date range.
+
+- **Responsive Design**: 
+  The application is fully responsive and works on both desktop and mobile devices, with appropriate UI adjustments.
+
+- **Type Safety**: 
+  Used TypeScript throughout the application to ensure type safety and better developer experience.
+
+- **Session Persistence**: 
+  Implemented session persistence using Nuxt's useCookie composable to maintain authenticated state across page refreshes.
